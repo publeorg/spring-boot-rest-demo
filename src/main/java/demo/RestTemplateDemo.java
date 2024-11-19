@@ -4,10 +4,12 @@ import org.apache.http.HttpHost;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.message.BasicHeader;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Collections;
 import java.util.HashMap;
 
 public class RestTemplateDemo {
@@ -19,7 +21,7 @@ public class RestTemplateDemo {
         .build();
     HttpClient client = HttpClientBuilder.create()
         .setDefaultRequestConfig(config)
-        //.setDefaultHeaders(Collections.singletonList(new BasicHeader("Connection", "close")))
+        .setDefaultHeaders(Collections.singletonList(new BasicHeader("Connection", "close")))
         .build();
     HttpComponentsClientHttpRequestFactory httpComponentsClientHttpRequestFactory = new HttpComponentsClientHttpRequestFactory(client);
 
