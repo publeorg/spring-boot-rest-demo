@@ -21,7 +21,7 @@ public class RestTemplateDemo {
         .build();
     HttpClient client = HttpClientBuilder.create()
         .setDefaultRequestConfig(config)
-        .setDefaultHeaders(Collections.singletonList(new BasicHeader("Connection", "close")))
+        //.setDefaultHeaders(Collections.singletonList(new BasicHeader("Connection", "close")))
         .build();
     HttpComponentsClientHttpRequestFactory httpComponentsClientHttpRequestFactory = new HttpComponentsClientHttpRequestFactory(client);
 
